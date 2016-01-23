@@ -1,4 +1,4 @@
 rootProject.name = 'hexagonal-books'
-include 'books-repository'
 include 'hexagonal-books.app'
+include 'hexagonal-books.inmemory-repository'
 

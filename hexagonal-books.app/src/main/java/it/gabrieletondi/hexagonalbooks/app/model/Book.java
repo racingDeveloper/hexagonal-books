@@ -13,4 +13,34 @@ public class Book
   {
     return new BookRate(id, rate);
   }
+
+  public boolean hasId(BookId otherId)
+  {
+    return this.id.equals(otherId);
+  }
+
+  @Override public String toString()
+  {
+    return "Book{" +
+        "id=" + id +
+        '}';
+  }
+
+  @Override public boolean equals(Object o)
+  {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+
+    Book book = (Book) o;
+
+    return id.equals(book.id);
+
+  }
+
+  @Override public int hashCode()
+  {
+    return id.hashCode();
+  }
 }
