@@ -15,6 +15,6 @@ sample hexagonal architecture application
   
 * ##rest##
   
-  primary adapter http (rest( implementation, it delivers the app through rest interface.  
+  primary adapter HTTP (rest) implementation, it delivers the app through rest interface.  
   
 
