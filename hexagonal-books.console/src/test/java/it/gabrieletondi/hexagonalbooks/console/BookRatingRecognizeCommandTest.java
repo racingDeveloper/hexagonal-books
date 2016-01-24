@@ -23,7 +23,7 @@ public class BookRatingRecognizeCommandTest
     });
   }
 
-  private final BookRatingCommand command = new BookRatingCommand(null);
+  private final BookRatingCommand command = new BookRatingCommand(null, null);
 
   private String pattern;
   private boolean shouldBeRecognized;

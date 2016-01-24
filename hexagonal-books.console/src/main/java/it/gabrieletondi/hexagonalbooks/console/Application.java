@@ -19,6 +19,7 @@ public class Application
             new BookRatingUseCase(
                 new InMemoryBookCatalog(books),
                 new InMemoryBookRatingRepository()
-            ))).run(new InputStreamReader(System.in));
+            ), new ConsoleDisplay()))
+        .run(new InputStreamReader(System.in));
   }
 }
