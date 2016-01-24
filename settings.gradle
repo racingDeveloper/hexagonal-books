@@ -2,4 +2,5 @@ rootProject.name = 'hexagonal-books'
 include 'application'
 include 'inmemory-repository'
 include 'console'
+include 'rest'
 
