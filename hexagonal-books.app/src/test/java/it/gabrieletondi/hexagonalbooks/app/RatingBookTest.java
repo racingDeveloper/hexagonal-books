@@ -2,7 +2,7 @@ package it.gabrieletondi.hexagonalbooks.app;
 
 import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
-import it.gabrieletondi.hexagonalbooks.app.repository.BookRateRepository;
+import it.gabrieletondi.hexagonalbooks.app.repository.BookRatingRepository;
 import it.gabrieletondi.hexagonalbooks.app.usecase.*;
 import org.jmock.Expectations;
 import org.jmock.auto.Mock;
@@ -10,7 +10,7 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 
-public class RateBookTest
+public class RatingBookTest
 {
   private static final BookId UNEXISTING_BOOK_ID = new BookId("unexisting");
   private static final BookId EXISTING_BOOK_ID = new BookId("existing");
@@ -24,14 +24,14 @@ public class RateBookTest
   private BookCatalog catalog;
 
   @Mock
-  private BookRateRepository bookRateRepository;
+  private BookRatingRepository bookRatingRepository;
 
-  private RateBookUseCase useCase;
+  private BookRatingUseCase useCase;
 
   @Before
   public void setUp() throws Exception
   {
-    useCase = new RateBookUseCase(catalog, bookRateRepository);
+    useCase = new BookRatingUseCase(catalog, bookRatingRepository);
   }
 
   @Test
@@ -43,7 +43,7 @@ public class RateBookTest
     }});
 
     expectedException.expect(BookNotFoundException.class);
-    useCase.execute(new RateBookCommand(UNEXISTING_BOOK_ID.id(), 0));
+    useCase.execute(new BookRatingCommand(UNEXISTING_BOOK_ID.id(), 0));
   }
 
   @Test
@@ -53,9 +53,9 @@ public class RateBookTest
       allowing(catalog).bookWithId(EXISTING_BOOK_ID);
       will(returnValue(new Book(EXISTING_BOOK_ID)));
 
-      oneOf(bookRateRepository).add(new BookRate(EXISTING_BOOK_ID, Rate.value(3)));
+      oneOf(bookRatingRepository).add(new BookRating(EXISTING_BOOK_ID, Rating.value(3)));
     }});
 
-    useCase.execute(new RateBookCommand(EXISTING_BOOK_ID.id(), 3));
+    useCase.execute(new BookRatingCommand(EXISTING_BOOK_ID.id(), 3));
   }
 }

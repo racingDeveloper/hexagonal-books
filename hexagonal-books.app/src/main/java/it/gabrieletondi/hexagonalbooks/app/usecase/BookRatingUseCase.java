@@ -2,27 +2,27 @@ package it.gabrieletondi.hexagonalbooks.app.usecase;
 
 import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
-import it.gabrieletondi.hexagonalbooks.app.repository.BookRateRepository;
+import it.gabrieletondi.hexagonalbooks.app.repository.BookRatingRepository;
 
-public class RateBookUseCase
+public class BookRatingUseCase
 {
   private final BookCatalog catalog;
-  private final BookRateRepository bookRateRepository;
+  private final BookRatingRepository bookRatingRepository;
 
-  public RateBookUseCase(BookCatalog catalog, BookRateRepository bookRateRepository)
+  public BookRatingUseCase(BookCatalog catalog, BookRatingRepository bookRatingRepository)
   {
     this.catalog = catalog;
-    this.bookRateRepository = bookRateRepository;
+    this.bookRatingRepository = bookRatingRepository;
   }
 
-  public void execute(RateBookCommand command)
+  public void execute(BookRatingCommand command)
   {
     Book book = catalog.bookWithId(new BookId(command.getBookId()));
 
     guardBookNotFound(book);
 
-    BookRate rate = book.rate(Rate.value(command.getRate()));
-    bookRateRepository.add(rate);
+    BookRating rate = book.rate(Rating.value(command.getRating()));
+    bookRatingRepository.add(rate);
   }
 
   private void guardBookNotFound(Book book)

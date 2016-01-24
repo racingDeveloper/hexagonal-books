@@ -9,9 +9,9 @@ public class Book
     this.id = id;
   }
 
-  public BookRate rate(Rate rate)
+  public BookRating rate(Rating rating)
   {
-    return new BookRate(id, rate);
+    return new BookRating(id, rating);
   }
 
   public boolean hasId(BookId otherId)

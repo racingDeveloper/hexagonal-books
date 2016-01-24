@@ -1,22 +1,22 @@
 package it.gabrieletondi.hexagonalbooks.app.model;
 
-public class Rate
+public class Rating
 {
   private final int value;
 
-  private Rate(int value)
+  private Rating(int value)
   {
     this.value = value;
   }
 
-  public static Rate value(int value)
+  public static Rating value(int value)
   {
-    return new Rate(value);
+    return new Rating(value);
   }
 
   @Override public String toString()
   {
-    return "Rate{" +
+    return "Rating{" +
         "value=" + value +
         '}';
   }
@@ -28,9 +28,9 @@ public class Rate
     if (o == null || getClass() != o.getClass())
       return false;
 
-    Rate rate = (Rate) o;
+    Rating rating = (Rating) o;
 
-    return value == rate.value;
+    return value == rating.value;
 
   }
 

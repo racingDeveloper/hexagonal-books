@@ -1,14 +1,14 @@
 package it.gabrieletondi.hexagonalbooks.app.usecase;
 
-public class RateBookCommand
+public class BookRatingCommand
 {
   private final String bookId;
-  private final int rate;
+  private final int rating;
 
-  public RateBookCommand(String bookId, int rate)
+  public BookRatingCommand(String bookId, int rating)
   {
     this.bookId = bookId;
-    this.rate = rate;
+    this.rating = rating;
   }
 
   public String getBookId()
@@ -16,8 +16,8 @@ public class RateBookCommand
     return bookId;
   }
 
-  public int getRate()
+  public int getRating()
   {
-    return rate;
+    return rating;
   }
 }
