@@ -1,6 +1,7 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
 import it.gabrieletondi.hexagonalbooks.app.usecase.BookRatingRequest;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

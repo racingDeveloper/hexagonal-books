@@ -1,6 +1,7 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
 import it.gabrieletondi.hexagonalbooks.app.usecase.BookRatingRequest;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
 import org.jmock.Expectations;
 import org.jmock.auto.Mock;
 import org.jmock.integration.junit4.JUnitRuleMockery;

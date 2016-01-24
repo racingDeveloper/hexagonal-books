@@ -4,7 +4,7 @@ import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookRatingRepository;
 
-public class BookRatingUseCase
+public class BookRatingUseCase implements UseCase
 {
   private final BookCatalog catalog;
   private final BookRatingRepository bookRatingRepository;
@@ -15,13 +15,13 @@ public class BookRatingUseCase
     this.bookRatingRepository = bookRatingRepository;
   }
 
-  public void execute(BookRatingRequest command)
+  public void execute(BookRatingRequest request)
   {
-    Book book = catalog.bookWithId(new BookId(command.getBookId()));
+    Book book = catalog.bookWithId(new BookId(request.getBookId()));
 
     guardBookNotFound(book);
 
-    BookRating rate = book.rate(Rating.value(command.getRating()));
+    BookRating rate = book.rate(Rating.value(request.getRating()));
     bookRatingRepository.add(rate);
   }
 
