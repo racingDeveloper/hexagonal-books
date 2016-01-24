@@ -10,8 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile project(':hexagonal-books.app')
-    testCompile project(':hexagonal-books.app').sourceSets.test.output
+    compile project(':application')
+    testCompile project(':application').sourceSets.test.output
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile 'org.hamcrest:hamcrest-all:1.3'
 }

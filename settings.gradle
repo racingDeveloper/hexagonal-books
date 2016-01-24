@@ -1,5 +1,5 @@
 rootProject.name = 'hexagonal-books'
-include 'hexagonal-books.app'
-include 'hexagonal-books.inmemory-repository'
-include 'hexagonal-books.console'
+include 'application'
+include 'inmemory-repository'
+include 'console'
 
