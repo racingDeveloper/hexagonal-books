@@ -43,7 +43,7 @@ public class RatingBookTest
     }});
 
     expectedException.expect(BookNotFoundException.class);
-    useCase.execute(new BookRatingCommand(UNEXISTING_BOOK_ID.id(), 0));
+    useCase.execute(new BookRatingRequest(UNEXISTING_BOOK_ID.id(), 0));
   }
 
   @Test
@@ -56,6 +56,6 @@ public class RatingBookTest
       oneOf(bookRatingRepository).add(new BookRating(EXISTING_BOOK_ID, Rating.value(3)));
     }});
 
-    useCase.execute(new BookRatingCommand(EXISTING_BOOK_ID.id(), 3));
+    useCase.execute(new BookRatingRequest(EXISTING_BOOK_ID.id(), 3));
   }
 }

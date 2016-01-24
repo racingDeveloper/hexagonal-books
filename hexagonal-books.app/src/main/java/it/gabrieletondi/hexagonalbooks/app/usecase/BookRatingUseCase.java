@@ -15,7 +15,7 @@ public class BookRatingUseCase
     this.bookRatingRepository = bookRatingRepository;
   }
 
-  public void execute(BookRatingCommand command)
+  public void execute(BookRatingRequest command)
   {
     Book book = catalog.bookWithId(new BookId(command.getBookId()));
 
