@@ -9,6 +9,31 @@ repositories {
 }
 
 dependencies {
+    compile project(':application')
+    compile project(':inmemory-repository')
     compile('org.springframework.boot:spring-boot-starter-web:1.3.2.RELEASE')
+    compile('javax.inject:javax.inject:1')
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'org.jmock:jmock:2.8.1'
+    testCompile 'org.jmock:jmock-junit4:2.8.1'
+    testCompile ("org.springframework.boot:spring-boot-starter-test:1.3.2.RELEASE") {
+        exclude group: "junit"
+    }
+}
+
+sourceSets{
+    e2eTest{
+        java.srcDir file('src/e2eTest/java')
+        resources.srcDir file('src/e2eTest/resources')
+        compileClasspath += sourceSets.main.output
+        compileClasspath += configurations.testRuntime
+        compileClasspath += sourceSets.test.output
+        runtimeClasspath += compileClasspath
+    }
+}
+
+task e2e(type:Test){
+    testClassesDir = sourceSets.e2eTest.output.classesDir
+    classpath = sourceSets.e2eTest.runtimeClasspath
 }
