@@ -17,17 +17,19 @@ public class BookRatingUseCase implements UseCase
 
   public void execute(BookRatingRequest request)
   {
-    Book book = catalog.bookWithId(new BookId(request.getBookId()));
-
-    guardBookNotFound(book);
-
+    Book book = aBookFoundWithId(request.getBookId());
     BookRating rate = book.rate(Rating.value(request.getRating()));
+
     bookRatingRepository.add(rate);
   }
 
-  private void guardBookNotFound(Book book)
+  private Book aBookFoundWithId(String bookId)
   {
+    Book book = catalog.bookWithId(new BookId(bookId));
+
     if (book == null)
       throw new BookNotFoundException();
+
+    return book;
   }
 }

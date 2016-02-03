@@ -15,6 +15,7 @@ public class RatingBookTest
 {
   private static final BookId UNEXISTING_BOOK_ID = new BookId("unexisting");
   private static final BookId EXISTING_BOOK_ID = new BookId("existing");
+  
   @Rule
   public JUnitRuleMockery context = new JUnitRuleMockery();
 
