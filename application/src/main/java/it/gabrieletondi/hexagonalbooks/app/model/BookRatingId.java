@@ -1,29 +1,19 @@
 package it.gabrieletondi.hexagonalbooks.app.model;
 
-public class BookId
+import java.util.UUID;
+
+public class BookRatingId
 {
   private final String id;
 
-  public BookId(String id)
+  public BookRatingId()
   {
-    guardInvalidId(id);
-    this.id = id;
-  }
-
-  private void guardInvalidId(String candidateId)
-  {
-    if (candidateId == null || (candidateId.equals("")))
-      throw new IllegalArgumentException();
-  }
-
-  public String id()
-  {
-    return id;
+    this.id = UUID.randomUUID().toString();
   }
 
   @Override public String toString()
   {
-    return "BookId{" +
+    return "BookRatingId{" +
         "id='" + id + '\'' +
         '}';
   }
@@ -35,9 +25,10 @@ public class BookId
     if (o == null || getClass() != o.getClass())
       return false;
 
-    BookId bookId = (BookId) o;
+    BookRatingId that = (BookRatingId) o;
 
-    return id.equals(bookId.id);
+    return id.equals(that.id);
+
   }
 
   @Override public int hashCode()

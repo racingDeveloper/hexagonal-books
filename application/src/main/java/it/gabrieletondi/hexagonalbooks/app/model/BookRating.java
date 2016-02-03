@@ -2,19 +2,32 @@ package it.gabrieletondi.hexagonalbooks.app.model;
 
 public class BookRating
 {
+  private final BookRatingId bookRatingId;
   private final BookId bookId;
   private final Rating rating;
 
-  public BookRating(BookId bookId, Rating rating)
+  public BookRating(BookRatingId bookRatingId, BookId bookId, Rating rating)
   {
+    this.bookRatingId = bookRatingId;
     this.bookId = bookId;
     this.rating = rating;
+  }
+
+  public BookId bookId()
+  {
+    return this.bookId;
+  }
+
+  public Rating rating()
+  {
+    return rating;
   }
 
   @Override public String toString()
   {
     return "BookRating{" +
-        "bookId=" + bookId +
+        "bookRatingId=" + bookRatingId +
+        ", bookId=" + bookId +
         ", rating=" + rating +
         '}';
   }
@@ -26,17 +39,14 @@ public class BookRating
     if (o == null || getClass() != o.getClass())
       return false;
 
-    BookRating bookRating = (BookRating) o;
+    BookRating that = (BookRating) o;
 
-    if (!bookId.equals(bookRating.bookId))
-      return false;
-    return rating.equals(bookRating.rating);
+    return bookRatingId.equals(that.bookRatingId);
+
   }
 
   @Override public int hashCode()
   {
-    int result = bookId.hashCode();
-    result = 31 * result + rating.hashCode();
-    return result;
+    return bookRatingId.hashCode();
   }
 }

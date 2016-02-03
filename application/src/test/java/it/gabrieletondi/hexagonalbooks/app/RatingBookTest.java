@@ -4,6 +4,7 @@ import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookRatingRepository;
 import it.gabrieletondi.hexagonalbooks.app.usecase.*;
+import org.hamcrest.*;
 import org.jmock.Expectations;
 import org.jmock.auto.Mock;
 import org.jmock.integration.junit4.JUnitRuleMockery;
@@ -53,9 +54,26 @@ public class RatingBookTest
       allowing(catalog).bookWithId(EXISTING_BOOK_ID);
       will(returnValue(new Book(EXISTING_BOOK_ID)));
 
-      oneOf(bookRatingRepository).add(new BookRating(EXISTING_BOOK_ID, Rating.value(3)));
+      oneOf(bookRatingRepository).add(with(aRatingFor(EXISTING_BOOK_ID, Rating.value(3))));
     }});
 
     useCase.execute(new BookRatingRequest(EXISTING_BOOK_ID.id(), 3));
   }
+
+  private Matcher<BookRating> aRatingFor(BookId expectedBook, Rating expectedValue)
+  {
+    return new TypeSafeMatcher<BookRating>()
+    {
+      @Override protected boolean matchesSafely(BookRating item)
+      {
+        return item.bookId().equals(expectedBook) && item.rating().equals(expectedValue);
+      }
+
+      @Override public void describeTo(Description description)
+      {
+        description.appendValue(expectedBook).appendValue(expectedValue);
+      }
+    };
+  }
+
 }

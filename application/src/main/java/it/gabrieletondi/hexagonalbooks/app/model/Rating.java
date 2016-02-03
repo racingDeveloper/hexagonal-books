@@ -6,7 +6,14 @@ public class Rating
 
   private Rating(int value)
   {
+    guardInvalidRatingValue(value);
     this.value = value;
+  }
+
+  private void guardInvalidRatingValue(int value)
+  {
+    if (value < 0 || value > 10)
+      throw new IllegalArgumentException();
   }
 
   public static Rating value(int value)

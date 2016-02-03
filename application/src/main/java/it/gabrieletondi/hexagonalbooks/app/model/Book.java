@@ -11,7 +11,7 @@ public class Book
 
   public BookRating rate(Rating rating)
   {
-    return new BookRating(id, rating);
+    return new BookRating(new BookRatingId(), id, rating);
   }
 
   public boolean hasId(BookId otherId)
