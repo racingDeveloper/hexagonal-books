@@ -2,8 +2,8 @@ package it.gabrieletondi.hexagonalbooks.console;
 
 import it.gabrieletondi.hexagonalbooks.app.model.Book;
 import it.gabrieletondi.hexagonalbooks.app.model.BookId;
-import it.gabrieletondi.hexagonalbooks.app.usecase.BookRatingUseCase;
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksUseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.bookRating.BookRatingUseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksUseCase;
 import it.gabrieletondi.hexagonalbooks.repository.*;
 
 import java.io.InputStreamReader;

@@ -1,8 +1,10 @@
 package it.gabrieletondi.hexagonalbooks.rest;
 
-import it.gabrieletondi.hexagonalbooks.app.usecase.*;
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse.BookStandings;
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse.BookStandings.BookStandingsItem;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksRequest;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse.BookStandings;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse.BookStandings.BookStandingsItem;
 import org.jmock.Expectations;
 import org.jmock.auto.Mock;
 import org.jmock.integration.junit4.JUnitRuleMockery;

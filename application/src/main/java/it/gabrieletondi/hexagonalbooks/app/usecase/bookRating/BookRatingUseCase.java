@@ -1,8 +1,9 @@
-package it.gabrieletondi.hexagonalbooks.app.usecase;
+package it.gabrieletondi.hexagonalbooks.app.usecase.bookRating;
 
 import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookRatingRepository;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
 
 public class BookRatingUseCase implements UseCase<BookRatingRequest, BookRatingResponse>
 {

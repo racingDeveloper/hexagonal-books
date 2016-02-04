@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.app.usecase;
+package it.gabrieletondi.hexagonalbooks.app.usecase.bookRating;
 
 public class BookRatingRequest
 {

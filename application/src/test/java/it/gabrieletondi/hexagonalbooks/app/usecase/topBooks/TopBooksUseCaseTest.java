@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.app.usecase;
+package it.gabrieletondi.hexagonalbooks.app.usecase.topBooks;
 
 import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.RatedBookRepository;

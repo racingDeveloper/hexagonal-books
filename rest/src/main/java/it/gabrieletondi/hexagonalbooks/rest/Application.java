@@ -2,7 +2,9 @@ package it.gabrieletondi.hexagonalbooks.rest;
 
 import it.gabrieletondi.hexagonalbooks.app.model.Book;
 import it.gabrieletondi.hexagonalbooks.app.model.BookId;
-import it.gabrieletondi.hexagonalbooks.app.usecase.*;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.bookRating.BookRatingUseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksUseCase;
 import it.gabrieletondi.hexagonalbooks.repository.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.app.usecase;
+package it.gabrieletondi.hexagonalbooks.app.usecase.topBooks;
 
 import java.util.Arrays;
 

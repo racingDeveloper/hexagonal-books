@@ -1,8 +1,9 @@
-package it.gabrieletondi.hexagonalbooks.app.usecase;
+package it.gabrieletondi.hexagonalbooks.app.usecase.topBooks;
 
 import it.gabrieletondi.hexagonalbooks.app.repository.RatedBookRepository;
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse.BookStandings;
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse.BookStandings.BookStandingsItem;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse.BookStandings;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse.BookStandings.BookStandingsItem;
 
 public class TopBooksUseCase implements UseCase<TopBooksRequest, TopBooksResponse>
 {

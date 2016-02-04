@@ -1,6 +1,7 @@
 package it.gabrieletondi.hexagonalbooks.rest;
 
-import it.gabrieletondi.hexagonalbooks.app.usecase.*;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.bookRating.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;

@@ -1,6 +1,8 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
-import it.gabrieletondi.hexagonalbooks.app.usecase.*;
+import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.bookRating.BookNotFoundException;
+import it.gabrieletondi.hexagonalbooks.app.usecase.bookRating.BookRatingRequest;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

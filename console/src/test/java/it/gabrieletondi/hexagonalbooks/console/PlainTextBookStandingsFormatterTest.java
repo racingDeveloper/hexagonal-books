@@ -1,6 +1,6 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;

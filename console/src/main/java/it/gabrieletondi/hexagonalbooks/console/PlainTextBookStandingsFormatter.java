@@ -1,7 +1,7 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse;
-import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksResponse.BookStandings.BookStandingsItem;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse;
+import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse.BookStandings.BookStandingsItem;
 
 public class PlainTextBookStandingsFormatter implements BookStandingsFormatter
 {

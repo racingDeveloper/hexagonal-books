@@ -1,9 +1,8 @@
-package it.gabrieletondi.hexagonalbooks.app;
+package it.gabrieletondi.hexagonalbooks.app.usecase.bookRating;
 
 import it.gabrieletondi.hexagonalbooks.app.model.*;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
 import it.gabrieletondi.hexagonalbooks.app.repository.BookRatingRepository;
-import it.gabrieletondi.hexagonalbooks.app.usecase.*;
 import org.hamcrest.*;
 import org.jmock.Expectations;
 import org.jmock.auto.Mock;
@@ -11,7 +10,7 @@ import org.jmock.integration.junit4.JUnitRuleMockery;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 
-public class RatingBookTest
+public class BookRatingUseCaseTest
 {
   private static final BookId UNEXISTING_BOOK_ID = new BookId("unexisting");
   private static final BookId EXISTING_BOOK_ID = new BookId("existing");
