@@ -1,5 +1,6 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
+import it.gabrieletondi.hexagonalbooks.console.command.Command;
 import org.jmock.Expectations;
 import org.jmock.auto.Mock;
 import org.jmock.integration.junit4.JUnitRuleMockery;

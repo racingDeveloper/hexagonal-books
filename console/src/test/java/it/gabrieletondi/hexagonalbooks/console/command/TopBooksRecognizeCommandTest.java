@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.console;
+package it.gabrieletondi.hexagonalbooks.console.command;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,24 +11,26 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
-public class BookRatingRecognizeCommandTest
+public class TopBooksRecognizeCommandTest
 {
 
   @Parameterized.Parameters(name = "{0}")
   public static Collection<Object[]> data() {
     return Arrays.asList(new Object[][] {
-        { "Book Rating 1234567 7", true },
-        { "Book Rating 1234567 acv", false },
-        { "Book Rating A_BOOK_ID 3", true },
+        { "Top10 Books", true },
+        { "top10 books", true },
+        { "topbooks", false },
+        { "top books argument", false },
+        { "bla bla bla", false },
     });
   }
 
-  private final BookRatingCommand command = new BookRatingCommand(null, null);
+  private final TopTenBooksCommand command = new TopTenBooksCommand(null, null, null);
 
   private String pattern;
   private boolean shouldBeRecognized;
 
-  public BookRatingRecognizeCommandTest(String pattern, boolean shouldBeRecognized)
+  public TopBooksRecognizeCommandTest(String pattern, boolean shouldBeRecognized)
   {
     this.pattern = pattern;
     this.shouldBeRecognized = shouldBeRecognized;

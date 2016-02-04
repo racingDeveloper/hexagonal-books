@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.console;
+package it.gabrieletondi.hexagonalbooks.console.display;
 
 public class ConsoleDisplay implements Display
 {

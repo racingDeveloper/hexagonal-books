@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.console;
+package it.gabrieletondi.hexagonalbooks.console.format;
 
 import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse;
 import org.junit.Test;

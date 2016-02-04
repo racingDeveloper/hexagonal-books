@@ -1,5 +1,7 @@
 package it.gabrieletondi.hexagonalbooks.console;
 
+import it.gabrieletondi.hexagonalbooks.console.command.Command;
+
 import java.io.BufferedReader;
 import java.io.Reader;
 import java.util.List;

@@ -1,8 +1,10 @@
-package it.gabrieletondi.hexagonalbooks.console;
+package it.gabrieletondi.hexagonalbooks.console.command;
 
 import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
 import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksRequest;
 import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksResponse;
+import it.gabrieletondi.hexagonalbooks.console.display.Display;
+import it.gabrieletondi.hexagonalbooks.console.format.BookStandingsFormatter;
 
 import java.util.regex.Pattern;
 
