@@ -3,6 +3,7 @@ package it.gabrieletondi.hexagonalbooks.console;
 import it.gabrieletondi.hexagonalbooks.app.model.Book;
 import it.gabrieletondi.hexagonalbooks.app.model.BookId;
 import it.gabrieletondi.hexagonalbooks.app.usecase.BookRatingUseCase;
+import it.gabrieletondi.hexagonalbooks.app.usecase.TopBooksUseCase;
 import it.gabrieletondi.hexagonalbooks.repository.*;
 
 import java.io.InputStreamReader;
@@ -21,7 +22,14 @@ public class Application
             new BookRatingUseCase(
                 new InMemoryBookCatalog(SharedMemory.books),
                 new InMemoryBookRatingRepository(SharedMemory.bookRatings)
-            ), new ConsoleDisplay()))
-        .run(new InputStreamReader(System.in));
+            ), new ConsoleDisplay()),
+        new TopTenBooksCommand(
+            new TopBooksUseCase(
+                new InMemoryRatedBookRepository(SharedMemory.bookRatings)
+            ),
+            new PlainTextBookStandingsFormatter(),
+            new ConsoleDisplay()
+        )
+    ).run(new InputStreamReader(System.in));
   }
 }

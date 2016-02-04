@@ -25,6 +25,11 @@ public class TopBooksResponse
       this.items = items;
     }
 
+    public BookStandingsItem[] getItems()
+    {
+      return items;
+    }
+
     @Override public String toString()
     {
       return "BookStandings{" +
@@ -91,6 +96,16 @@ public class TopBooksResponse
         temp = Double.doubleToLongBits(avgRating);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+      }
+
+      public String getBookId()
+      {
+        return bookId;
+      }
+
+      public double getAvgRating()
+      {
+        return avgRating;
       }
     }
   }
