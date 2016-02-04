@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.rest;
+package it.gabrieletondi.hexagonalbooks.rest.controller;
 
 public class BookRatingDTO
 {

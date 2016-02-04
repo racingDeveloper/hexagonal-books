@@ -1,4 +1,4 @@
-package it.gabrieletondi.hexagonalbooks.rest;
+package it.gabrieletondi.hexagonalbooks.rest.controller;
 
 import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
 import it.gabrieletondi.hexagonalbooks.app.usecase.topBooks.TopBooksRequest;
