@@ -13,10 +13,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RequestMapping(value = "/book/{bookId}/rating")
 public class BookRatingController
 {
-  private final UseCase useCase;
+  private final UseCase<BookRatingRequest, BookRatingResponse> useCase;
 
   @Inject
-  public BookRatingController(UseCase bookRatingUseCase)
+  public BookRatingController(UseCase<BookRatingRequest, BookRatingResponse> bookRatingUseCase)
   {
     this.useCase = bookRatingUseCase;
   }

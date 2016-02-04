@@ -20,7 +20,8 @@ public class BookRatingControllerTest
   public ExpectedException expectedException = ExpectedException.none();
 
   @Mock
-  public UseCase useCase;
+  public UseCase<BookRatingRequest, BookRatingResponse> useCase;
+
   private BookRatingController controller;
 
   @Before

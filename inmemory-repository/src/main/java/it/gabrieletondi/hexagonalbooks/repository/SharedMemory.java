@@ -14,4 +14,10 @@ public class SharedMemory
   private SharedMemory()
   {
   }
+
+  public static void clearAll()
+  {
+    books.clear();
+    bookRatings.clear();
+  }
 }

@@ -1,5 +1,8 @@
 package it.gabrieletondi.hexagonalbooks.rest.e2e;
 
+import it.gabrieletondi.hexagonalbooks.app.model.Book;
+import it.gabrieletondi.hexagonalbooks.app.model.BookId;
+import it.gabrieletondi.hexagonalbooks.repository.SharedMemory;
 import it.gabrieletondi.hexagonalbooks.rest.Application;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
 
+import static java.util.Arrays.asList;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
@@ -32,6 +36,10 @@ public class BookRatingE2ETest
   @Before
   public void init()
   {
+    SharedMemory.clearAll();
+    SharedMemory.books.addAll(asList(new Book(new BookId("123456")),
+                                     new Book(new BookId("654321"))));
+
     mvc = MockMvcBuilders.webAppContextSetup(context).build();
   }
 
