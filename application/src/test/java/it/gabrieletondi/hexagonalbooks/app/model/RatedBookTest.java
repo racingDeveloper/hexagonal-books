@@ -13,10 +13,10 @@ public class RatedBookTest
   public void calculatesAverageRating() throws Exception
   {
     RatedBook ratedBook = new RatedBook(null, asList(
-        new BookRating(null, null, Rating.value(3)),
-        new BookRating(null, null, Rating.value(4)),
-        new BookRating(null, null, Rating.value(2)),
-        new BookRating(null, null, Rating.value(10))
+        Rating.value(3),
+        Rating.value(4),
+        Rating.value(2),
+        Rating.value(10)
     ));
 
     assertThat(ratedBook.avgRating(), is(4.75));

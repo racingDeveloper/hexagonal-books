@@ -41,20 +41,20 @@ public class TopBooksUseCaseTest
         new RatedBook(
             new BookId(BOOK_A),
             asList(
-                new BookRating(new BookRatingId(), new BookId(BOOK_A), Rating.value(1)),
-                new BookRating(new BookRatingId(), new BookId(BOOK_A), Rating.value(3))
+                Rating.value(1),
+                Rating.value(3)
             )
         ),
         new RatedBook(
             new BookId(BOOK_B),
-            singletonList(new BookRating(new BookRatingId(), new BookId(BOOK_B), Rating.value(10)))
+            singletonList(Rating.value(10))
         ),
         new RatedBook(
             new BookId(BOOK_C),
             asList(
-                new BookRating(new BookRatingId(), new BookId(BOOK_C), Rating.value(5)),
-                new BookRating(new BookRatingId(), new BookId(BOOK_C), Rating.value(7)),
-                new BookRating(new BookRatingId(), new BookId(BOOK_C), Rating.value(6))
+                Rating.value(5),
+                Rating.value(7),
+                Rating.value(6)
             )
         )
     );

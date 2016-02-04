@@ -4,12 +4,13 @@ import it.gabrieletondi.hexagonalbooks.app.model.Book;
 import it.gabrieletondi.hexagonalbooks.app.model.BookId;
 import it.gabrieletondi.hexagonalbooks.app.usecase.BookRatingUseCase;
 import it.gabrieletondi.hexagonalbooks.app.usecase.UseCase;
-import it.gabrieletondi.hexagonalbooks.repository.InMemoryBookCatalog;
-import it.gabrieletondi.hexagonalbooks.repository.InMemoryBookRatingRepository;
+import it.gabrieletondi.hexagonalbooks.repository.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import static java.util.Arrays.asList;
 
 @SpringBootApplication
 @Configuration
@@ -23,10 +24,11 @@ public class Application
   @Bean
   public UseCase bookRatingUseCase()
   {
+    SharedMemory.books.addAll(asList(new Book(new BookId("123456")),
+                                     new Book(new BookId("654321"))));
+
     return new BookRatingUseCase(
-        new InMemoryBookCatalog(
-            new Book(new BookId("123456")),
-            new Book(new BookId("654321"))),
-        new InMemoryBookRatingRepository());
+        new InMemoryBookCatalog(SharedMemory.books),
+        new InMemoryBookRatingRepository(SharedMemory.bookRatings));
   }
 }

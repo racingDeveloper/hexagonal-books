@@ -6,15 +6,13 @@ import it.gabrieletondi.hexagonalbooks.app.repository.BookCatalog;
 
 import java.util.List;
 
-import static java.util.Arrays.asList;
-
 public class InMemoryBookCatalog implements BookCatalog
 {
   private final List<Book> books;
 
-  public InMemoryBookCatalog(Book... books)
+  public InMemoryBookCatalog(List<Book> books)
   {
-    this.books = asList(books);
+    this.books = books;
   }
 
   @Override public Book bookWithId(BookId bookId)
