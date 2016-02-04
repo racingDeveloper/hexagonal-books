@@ -1,6 +1,6 @@
 package it.gabrieletondi.hexagonalbooks.app.usecase;
 
-public interface UseCase
+public interface UseCase<Request, Response>
 {
-  void execute(BookRatingRequest command);
+  Response execute(Request command);
 }

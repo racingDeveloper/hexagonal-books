@@ -21,6 +21,11 @@ public class Rating
     return new Rating(value);
   }
 
+  public int value()
+  {
+    return value;
+  }
+
   @Override public String toString()
   {
     return "Rating{" +
