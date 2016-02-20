@@ -16,6 +16,8 @@ public class TopBooksUseCase implements UseCase<TopBooksRequest, TopBooksRespons
 
   @Override public TopBooksResponse execute(TopBooksRequest command)
   {
+    // REFACTOR: maybe this could be an object, extract me and show
+    // decoupling between clients and inner hexagon
     BookStandingsItem[] items = repository.listAll()
         .stream()
         .sorted((r1, r2) -> Double.compare(r2.avgRating(), r1.avgRating()))
